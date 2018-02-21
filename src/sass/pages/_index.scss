@@ -108,7 +108,7 @@
       overflow-y:auto;
       @include tablet-portrait {
         width: $width-right-side-tablet-portrait;
-        padding: 0 $padding-section-right*0.3;
+        padding: 0 $padding-section-right * $mobile-multiplier;
       }
       @include mobile {
         width: $width-right-side-mobile;
@@ -146,7 +146,7 @@
       @include list;
       @include tablet-portrait {
         width: $width-right-side-tablet-portrait;
-        padding-left: $padding-section-right*.3;
+        padding-left: $padding-section-right * $mobile-multiplier;
       }
       @include mobile {
         width: $width-right-side-mobile;

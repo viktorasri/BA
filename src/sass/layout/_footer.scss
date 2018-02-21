@@ -79,16 +79,37 @@
       width: 60%;
       @include tablet-portrait {
         width: $width-right-side-tablet-portrait;
-        padding-left: $padding-section-right*.3 ;
+        padding-left: $padding-section-right * $mobile-multiplier ;
       }
       @include mobile {
         width: $width-right-side-mobile;
-        padding: 0 0 0 $padding-section-right*.3;
+        padding: 0 0 0 $padding-section-right * $mobile-multiplier
       }
 
       &__list {
         @include list;
         padding-bottom: 5rem;
+        .list-item {
+          padding: 2.5rem 0 ;
+          &:last-child {
+            border-bottom: 2px solid $color-list-decoration;
+            padding-bottom: 2.5rem;
+          }
+        }
+      }
+
+      &__label-holder {
+        position: relative;
+        display: inline-block;
+        width: 80%;
+        .form-label {
+          position: absolute;
+          top: 0;
+          left: 0;
+          color: $color-list-decoration;
+          font-size: 2.5rem;
+          transition: .2s;
+        }
       }
 
       &__input {
@@ -96,12 +117,12 @@
         border: none;
         font-size: 2.5rem;
         color: $color-yellow;
-        width: 80%;
-        &::placeholder {
-          color: $color-list-decoration;
-        }
+        width: 100%;
         &:focus {
           outline: none;
+        }
+        &:focus + .form-label {
+          transform: translate(-10%, -80%) scale(.8);
         }
       }
 

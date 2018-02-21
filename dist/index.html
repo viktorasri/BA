@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <script src="js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
 <header class="header">
@@ -152,15 +151,30 @@
         </h2>
         <form class="contact-form__form">
             <ul class="contact-form__form__list">
-                <li><input class="contact-form__form__input" placeholder="First name" type="text"></li>
-                <li><input class="contact-form__form__input" placeholder="Last name" type="text"></li>
-                <li><input class="contact-form__form__input" placeholder="Email"  required type="email"></li>
+                <li class="list-item">
+                    <div class="contact-form__form__label-holder">
+                        <input id="name" class="contact-form__form__input"  type="text">
+                        <label class="form-label" for="name">First name</label>
+                    </div>
+                </li >
+                <li class="list-item">
+                    <div class="contact-form__form__label-holder">
+                        <input class="contact-form__form__input" id="lastname" type="text">
+                        <label class="form-label" for="lastname">Last name</label>
+                    </div>
+                </li>
+                <li class="list-item">
+                    <div class="contact-form__form__label-holder">
+                        <input class="contact-form__form__input" id="email" type="email">
+                        <label class="form-label" for="email" required>Email</label>
+                    </div>
+                </li>
             </ul>
             <button class="contact-form__form__btn">Get it</button>
         </form>
 
     </section>
 </footer>
-
+<script src="js/bundle.min.js"></script>
 </body>
 </html>
