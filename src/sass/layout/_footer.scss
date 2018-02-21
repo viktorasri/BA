@@ -1,0 +1,113 @@
+.footer {
+  background-color: $color-purple-base;
+  @include container;
+
+
+  .know-us {
+    height: 90vh;
+    background-image:
+            linear-gradient(
+                    rgba($color-purple-base, .7),
+                    rgba($color-purple-base, .7)
+            ),
+            url("../img/footer.jpeg")
+    ;
+    @include background-image;
+    opacity: 1;
+    position: relative;
+
+    &__text-block {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      .fa-arrow-down {
+        font-weight: lighter;
+        font-size: 10rem;
+        color: $color-white;
+        @include tablet-portrait {
+          font-size: 8rem;
+        }
+        @include mobile {
+          font-size: 6rem;
+        }
+      }
+    }
+
+    &__heading {
+      font-size: 12rem;
+      font-weight: 700;
+      color: $color-yellow;
+      margin-bottom: 8rem;
+      @include tablet-portrait {
+        font-size: 10rem;
+        margin-bottom: 6rem;
+      }
+      @include mobile {
+        font-size: 8rem;
+        margin-bottom: 5rem;
+      }
+    }
+  }
+
+  .contact-form {
+    @include section;
+    padding-bottom: $padding-section;
+    display: flex;
+    @include mobile {
+      flex-wrap: wrap;
+    }
+
+    .section-heading {
+      @include section-heading;
+      font-size: 3.5rem;
+      width: 40%;
+      background-color: $color-purple-light;
+      display: flex;
+      align-items: center;
+      @include tablet-portrait {
+        width: $width-heading-tablet-portrait;
+      }
+      @include mobile {
+        @include mobile__seaction-heading;
+      }
+    }
+
+    &__form {
+      padding: $padding-section 0 $padding-section $padding-section-right;
+      width: 60%;
+      @include tablet-portrait {
+        width: $width-right-side-tablet-portrait;
+        padding-left: $padding-section-right*.3 ;
+      }
+      @include mobile {
+        width: $width-right-side-mobile;
+        padding: 0 0 0 $padding-section-right*.3;
+      }
+
+      &__list {
+        @include list;
+        padding-bottom: 5rem;
+      }
+
+      &__input {
+        background-color: inherit;
+        border: none;
+        font-size: 2.5rem;
+        color: $color-yellow;
+        width: 80%;
+        &::placeholder {
+          color: $color-list-decoration;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &__btn {
+        @include button($color-yellow)
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+html {
+    font-size: 62.5%;
+    @include tablet-landscape {
+        font-size: 56.25%;
+    }
+    @include tablet-portrait {
+        font-size: 50%;
+    }
+    @include  mobile {
+        font-size: 37.5%;
+    }
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    color: $color-black;
+    box-sizing: border-box;
+    background-color: $color-Purple-dark;
+}
+
+

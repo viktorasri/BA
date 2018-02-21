@@ -1,0 +1,156 @@
+.index {
+  @include container;
+  background-color: $color-white;
+
+  .section-heading {
+    @include section-heading;
+  }
+
+  .projects {
+    @include section;
+
+    .section-heading {
+      margin-bottom: 8rem;
+    }
+
+    &__container {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: $color-black;
+      font-size: 0;
+    }
+
+    &__image {
+      width: 50%;
+      position: relative;
+      transition: .25s;
+      overflow: hidden;
+      cursor: pointer;
+      font-size: 0;
+      @include tablet-landscape {
+        overflow-y: scroll;
+      }
+      @include tablet-portrait {
+        width: 100%;
+      }
+      &:hover {
+        background-color: $color-purple-base;
+        img {
+          opacity: 0.1;
+        }
+        .projects__image__textbox__heading{
+          position: initial;
+        }
+        .projects__image__textbox__text {
+          display: block;
+        }
+      }
+
+      img {
+        width: 100%;
+        opacity: .65;
+      }
+
+      &__textbox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        padding: 2rem;
+        &__heading {
+          @include image-heading;
+          position: absolute;
+          bottom: 2rem;
+          left: 2rem;
+        }
+        &__text {
+          @include regular-text($color-white);
+          display: none;
+
+          @include tablet-portrait {
+            font-size: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  .about-us {
+    @include section;
+    display: flex;
+    @include mobile {
+      flex-wrap: wrap;
+    }
+
+    .section-heading {
+      width: 40%;
+      overflow: hidden;
+      @include tablet-portrait {
+        width: $width-heading-tablet-portrait;
+      }
+      @include mobile {
+        width: $width-heading-mobile;
+        margin-bottom: 3rem;
+      }
+      &:after {
+        @include stripe(200%, -50%);
+        height: .7rem;
+        margin-top: 1.5rem;
+      }
+    }
+
+    &__text {
+      width: 60%;
+      padding: 0 $padding-section-right;
+      @include regular-text($color-black);
+      max-height: 50rem;
+      overflow-y:auto;
+      @include tablet-portrait {
+        width: $width-right-side-tablet-portrait;
+        padding: 0 $padding-section-right*0.3;
+      }
+      @include mobile {
+        width: $width-right-side-mobile;
+      }
+    }
+  }
+
+  .our-services {
+    @include section;
+    padding-bottom: $padding-section;
+    display: flex;
+    @include mobile {
+      flex-wrap: wrap;
+    }
+
+    .section-heading {
+      width: 40%;
+      background-color: $color-purple-base;
+      color: $color-white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include tablet-portrait {
+        width: $width-heading-tablet-portrait;
+        justify-content: initial;
+      }
+      @include mobile {
+        @include mobile__seaction-heading;
+      }
+    }
+
+    &__list {
+      width: 60%;
+      padding-left: $padding-section-right;
+      @include list;
+      @include tablet-portrait {
+        width: $width-right-side-tablet-portrait;
+        padding-left: $padding-section-right*.3;
+      }
+      @include mobile {
+        width: $width-right-side-mobile;
+      }
+    }
+  }
+}
